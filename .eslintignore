@@ -1,0 +1,14 @@
+node_modules
+dist
+*.sh
+*.md
+*.woff
+*.ttf
+.vscode
+.idea
+.local
+/public
+/docs
+/bin
+components.d.ts
+auto-imports.d.ts

@@ -1,0 +1,8 @@
+node_modules
+dist
+public
+.vit
+*.html
+**/*.svg
+components.d.ts
+auto-imports.d.ts

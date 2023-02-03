@@ -1,0 +1,25 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+
+.local
+# local env files
+.env.local
+.env.*.local
+.eslintcache
+
+# lock
+yarn.lock
+package-lock.json
+# pnpm-lock.yaml
+
+# Log files
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+# .vscode
