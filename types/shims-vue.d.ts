@@ -1,15 +1,3 @@
-import type { ComponentPublicInstance, FunctionalComponent, ComponentRenderProxy } from 'vue';
-
-declare module 'vue' {
-  export type JSXComponent<Props = any> = { new (): ComponentPublicInstance<Props> } | FunctionalComponent<Props>;
-}
-
-declare module '*.vue' {
-  import type { DefineComponent } from 'vue';
-  const Component: DefineComponent<{}, {}, any>;
-  export default Component;
-}
-
 declare interface ComponentElRef<T extends HTMLElement = HTMLDivElement> {
   $el: T;
 }
@@ -19,6 +7,7 @@ declare type ComponentRef<T extends HTMLElement = HTMLDivElement> = ComponentElR
 declare type ElRef<T extends HTMLElement = HTMLDivElement> = Nullable<T>;
 
 declare namespace JSX {
+  import type { ComponentRenderProxy } from 'vue';
   // tslint:disable no-empty-interface
   type Element = VNode;
   // tslint:disable no-empty-interface
@@ -33,3 +22,10 @@ declare namespace JSX {
     [elem: string]: any;
   }
 }
+
+declare module 'vue' {
+  import type { ComponentPublicInstance, FunctionalComponent } from 'vue';
+  export type JSXComponent<Props = any> = { new (): ComponentPublicInstance<Props> } | FunctionalComponent<Props>;
+}
+
+export {};
